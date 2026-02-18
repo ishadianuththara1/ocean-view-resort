@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Guest - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>Register New Guest</h2>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div class="card">
+            <h2>Guest Details</h2>
+
+            <form id="guestForm" autocomplete="off">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span style="color:red;">*</span></label>
+                        <input type="text" id="firstName" placeholder="e.g. Nimal">
+                        <span class="error-msg" id="firstNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span style="color:red;">*</span></label>
+                        <input type="text" id="lastName" placeholder="e.g. Perera">
+                        <span class="error-msg" id="lastNameError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address <span style="color:red;">*</span></label>
+                    <input type="text" id="address" placeholder="e.g. 45 Galle Road, Colombo 03">
+                    <span class="error-msg" id="addressError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number <span style="color:red;">*</span></label>
+                        <input type="text" id="contactNumber" placeholder="e.g. 0771234567">
+                        <span class="error-msg" id="contactError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address <span style="color:#aaa;">(optional)</span></label>
+                        <input type="text" id="email" placeholder="e.g. nimal@email.com">
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">Register Guest</button>
+                    <a href="guests.html" class="btn btn-secondary" style="margin-left:10px;">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+
+        <p style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/add-guest.js"></script>
+
+</body>
+</html>

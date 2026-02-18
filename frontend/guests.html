@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guests - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>Guests</h2>
+            <a href="add-guest.html" class="btn btn-primary">+ Register New Guest</a>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div class="card">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by name or contact number...">
+            </div>
+
+            <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Full Name</th>
+                            <th>Address</th>
+                            <th>Contact Number</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="guestsBody">
+                        <tr>
+                            <td colspan="6" class="text-center" style="padding:30px; color:#888;">
+                                Loading guests...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+
+        <p style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/guests.js"></script>
+
+</body>
+</html>

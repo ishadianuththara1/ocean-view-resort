@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Details - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>Guest Details</h2>
+            <a href="guests.html" class="btn btn-secondary">&larr; Back to Guests</a>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div id="viewSection" class="card">
+            <h2>Registered Guest Information</h2>
+
+            <table border="1" style="width:100%;">
+                <tr>
+                    <td>Guest ID</td>
+                    <td><strong id="viewGuestId"></strong></td>
+                </tr>
+                <tr>
+                    <td>First Name</td>
+                    <td id="viewFirstName"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td id="viewLastName"></td>
+                </tr>
+                <tr>
+                    <td>Full Name</td>
+                    <td><strong id="viewFullName"></strong></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td id="viewAddress"></td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td id="viewContact"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td id="viewEmail"></td>
+                </tr>
+            </table>
+
+            <div class="action-bar">
+                <button id="editBtn" class="btn btn-primary">Edit Details</button>
+                <button id="newReservationBtn" class="btn btn-gold">New Reservation</button>
+                <button id="deleteBtn" class="btn btn-danger">Delete Guest</button>
+            </div>
+        </div>
+
+        <div id="editSection" class="card" style="display:none;">
+            <h2>Edit Guest Details</h2>
+
+            <form id="editForm" autocomplete="off">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editFirstName">First Name <span style="color:red;">*</span></label>
+                        <input type="text" id="editFirstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="editLastName">Last Name <span style="color:red;">*</span></label>
+                        <input type="text" id="editLastName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editAddress">Address <span style="color:red;">*</span></label>
+                    <input type="text" id="editAddress">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editContact">Contact Number <span style="color:red;">*</span></label>
+                        <input type="text" id="editContact">
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email <span style="color:#aaa;">(optional)</span></label>
+                        <input type="text" id="editEmail">
+                    </div>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <button type="submit" id="saveBtn" class="btn btn-primary">Save Changes</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-secondary"
+                        style="margin-left:10px;">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/view-guest.js"></script>
+
+</body>
+
+</html>
