@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>All Reservations</h2>
+            <a href="add-reservation.html" class="btn btn-primary">+ New Reservation</a>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div class="card">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by guest name, reservation number, or contact number...">
+            </div>
+
+            <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Res. Number</th>
+                            <th>Guest Name</th>
+                            <th>Contact</th>
+                            <th>Room Type</th>
+                            <th>Check-In</th>
+                            <th>Check-Out</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservationsBody">
+                        <tr>
+                            <td colspan="8" class="text-center" style="padding:30px; color:#888;">
+                                Loading reservations...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+
+        <p style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/reservations.js"></script>
+
+</body>
+</html>

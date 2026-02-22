@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reservation - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>Reservation Details</h2>
+            <a href="reservations.html" class="btn btn-secondary">&larr; Back to List</a>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div id="viewSection">
+
+            <div class="card">
+                <h2>Guest Information</h2>
+                <table border="1" style="width:100%;">
+                    <tr>
+                        <td>Full Name</td>
+                        <td><strong id="viewGuestName"></strong></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td id="viewAddress"></td>
+                    </tr>
+                    <tr>
+                        <td>Contact Number</td>
+                        <td id="viewContact"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td id="viewEmail"></td>
+                    </tr>
+                </table>
+                <div style="margin-top:14px;">
+                    <a id="viewGuestLink" href="#" class="btn btn-secondary btn-sm">View Guest Record</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Booking Information</h2>
+                <table border="1" style="width:100%;">
+                    <tr>
+                        <td>Reservation Number</td>
+                        <td><strong id="viewResNumber"></strong></td>
+                    </tr>
+                    <tr>
+                        <td>Room Type</td>
+                        <td id="viewRoomType"></td>
+                    </tr>
+                    <tr>
+                        <td>Check-In Date</td>
+                        <td id="viewCheckIn"></td>
+                    </tr>
+                    <tr>
+                        <td>Check-Out Date</td>
+                        <td id="viewCheckOut"></td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td id="viewStatus"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Amount</td>
+                        <td><strong id="viewTotal" style="color:#003366; font-size:16px;"></strong></td>
+                    </tr>
+                </table>
+
+                <div class="action-bar">
+                    <button id="editBtn" class="btn btn-primary">Edit Reservation</button>
+                    <button id="billBtn" class="btn btn-gold">View Bill</button>
+                    <button id="deleteBtn" class="btn btn-danger">Delete Reservation</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="editSection" class="card" style="display:none;">
+            <h2>Edit Reservation</h2>
+            <p style="color:#888; font-size:13px; margin-bottom:16px;">
+                You can update the room type, dates, and status.
+                To change the guest, delete this reservation and create a new one.
+            </p>
+
+            <form id="editForm" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="editRoomType">Room Type <span style="color:red;">*</span></label>
+                    <select id="editRoomType">
+                        <option value="Standard">Standard &mdash; LKR 80 / night</option>
+                        <option value="Deluxe">Deluxe &mdash; LKR 150 / night</option>
+                        <option value="Suite">Suite &mdash; LKR 250 / night</option>
+                        <option value="Family">Family &mdash; LKR 180 / night</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editCheckIn">Check-In Date <span style="color:red;">*</span></label>
+                        <input type="date" id="editCheckIn">
+                    </div>
+                    <div class="form-group">
+                        <label for="editCheckOut">Check-Out Date <span style="color:red;">*</span></label>
+                        <input type="date" id="editCheckOut">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editStatus">Status</label>
+                    <select id="editStatus">
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Cancelled">Cancelled</option>
+                        <option value="Checked Out">Checked Out</option>
+                    </select>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <button type="submit" id="saveBtn" class="btn btn-primary">Save Changes</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-secondary"
+                        style="margin-left:10px;">Cancel</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/view-reservation.js"></script>
+
+</body>
+
+</html>

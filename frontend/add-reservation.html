@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Reservation - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>New Reservation</h2>
+        </div>
+
+        <div id="alertBox" class="alert"></div>
+
+        <div class="card">
+            <h2>Booking Details</h2>
+
+            <form id="reservationForm" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="guestId">
+                        Select Guest <span style="color:red;">*</span>
+                        &nbsp;&mdash;&nbsp;
+                        <a href="add-guest.html" style="font-size:12px; color:#003366;">
+                            + Register new guest first
+                        </a>
+                    </label>
+                    <select id="guestId">
+                        <option value="">-- Select a registered guest --</option>
+                    </select>
+                    <span class="error-msg" id="guestError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomType">Room Type <span style="color:red;">*</span></label>
+                    <select id="roomType">
+                        <option value="">-- Select Room Type --</option>
+                        <option value="Standard">Standard &mdash; LKR 80 / night</option>
+                        <option value="Deluxe">Deluxe &mdash; LKR 150 / night</option>
+                        <option value="Suite">Suite &mdash; LKR 250 / night</option>
+                        <option value="Family">Family &mdash; LKR 180 / night</option>
+                    </select>
+                    <span class="error-msg" id="roomTypeError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkInDate">Check-In Date <span style="color:red;">*</span></label>
+                        <input type="date" id="checkInDate">
+                        <span class="error-msg" id="checkInError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkOutDate">Check-Out Date <span style="color:red;">*</span></label>
+                        <input type="date" id="checkOutDate">
+                        <span class="error-msg" id="checkOutError"></span>
+                    </div>
+                </div>
+
+                <div id="costPreview"
+                    style="display:none; background:#f0f8f0; border:1px solid #c3e6cb; border-radius:5px; padding:12px; margin-bottom:16px; font-size:13px;">
+                    Estimated cost: <strong id="costAmount"></strong>
+                    (<span id="costNights"></span> night(s) &times; <span id="costRate"></span>/night)
+                </div>
+
+                <div style="margin-top:10px;">
+                    <button type="submit" id="submitBtn" class="btn btn-primary">Create Reservation</button>
+                    <a href="reservations.html" class="btn btn-secondary" style="margin-left:10px;">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+
+        <p style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/add-reservation.js"></script>
+
+</body>
+
+</html>
