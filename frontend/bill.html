@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Bill - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar no-print">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card no-print">
+            <h2>Calculate Bill</h2>
+
+            <div id="alertBox" class="alert"></div>
+
+            <div class="form-group">
+                <label for="reservationSelect">Select Reservation</label>
+                <select id="reservationSelect">
+                    <option value="">-- Select a Reservation --</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="billSection" class="card" style="display:none;">
+
+            <div class="bill-header">
+                <h2>Ocean View Resort</h2>
+                <p style="color:#666; margin-top:4px;">Galle, Sri Lanka | Room Reservation Bill</p>
+            </div>
+
+            <p style="text-align:right; color:#888; font-size:13px; margin-bottom:20px;">
+                Date: <span id="billDate"></span>
+            </p>
+
+            <table class="bill-table" style="width:100%; margin-bottom:20px;">
+                <tr>
+                    <td>Reservation Number</td>
+                    <td id="billResNumber"></td>
+                </tr>
+                <tr>
+                    <td>Guest Name</td>
+                    <td id="billGuestName"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td id="billAddress"></td>
+                </tr>
+                <tr>
+                    <td>Contact Number</td>
+                    <td id="billContact"></td>
+                </tr>
+                <tr>
+                    <td>Room Type</td>
+                    <td id="billRoomType"></td>
+                </tr>
+                <tr>
+                    <td>Check-In Date</td>
+                    <td id="billCheckIn"></td>
+                </tr>
+                <tr>
+                    <td>Check-Out Date</td>
+                    <td id="billCheckOut"></td>
+                </tr>
+                <tr>
+                    <td>Number of Nights</td>
+                    <td id="billNights"></td>
+                </tr>
+                <tr>
+                    <td>Price Per Night</td>
+                    <td id="billPriceNight"></td>
+                </tr>
+            </table>
+
+            <div class="bill-total">
+                Total Amount: <span id="billTotal"></span>
+            </div>
+
+            <p style="font-size:12px; color:#888; margin-top:16px; text-align:center;">
+                Thank you for staying at Ocean View Resort. We hope to see you again!
+            </p>
+
+            <div class="action-bar no-print" style="justify-content:center; margin-top:20px;">
+                <button id="printBtn" class="btn btn-primary">Print Bill</button>
+                <a href="reservations.html" class="btn btn-secondary" style="margin-left:10px;">Back to Reservations</a>
+            </div>
+
+        </div>
+
+        <p class="no-print" style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/bill.js"></script>
+
+</body>
+
+</html>
