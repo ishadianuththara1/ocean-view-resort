@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>Reports</h2>
+            <button class="btn btn-secondary" onclick="window.print()">&#128438; Print</button>
+        </div>
+
+        <p class="reports-date" id="reportDate"></p>
+
+        <div id="alertBox" class="alert"></div>
+
+        <!-- Card 1: Daily Summary -->
+        <div class="card report-section">
+            <h3>Daily Summary</h3>
+                <p><strong>Check-Ins Today: <span id="checkInCount">...</span></strong></p>
+                    <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Reservation #</th>
+                                    <th>Guest</th>
+                                    <th>Room Type</th>
+                                    <th>Check-Out</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="checkInsBody">
+                                <tr><td colspan="5" class="text-center" style="padding:20px;color:#888;">Loading...</td></tr>
+                            </tbody>
+                    </table>
+                <br>
+                <p><strong>Check-Outs Today: <span id="checkOutCount">...</span></strong></p>
+                    <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Reservation #</th>
+                                    <th>Guest</th>
+                                    <th>Room Type</th>
+                                    <th>Check-In</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="checkOutsBody">
+                                <tr><td colspan="5" class="text-center" style="padding:20px;color:#888;">Loading...</td></tr>
+                            </tbody>
+                    </table>
+        </div>
+
+        <!-- Card 2: Revenue by Room Type -->
+        <div class="card report-section">
+            <h3>Revenue by Room Type <small style="font-weight:normal;color:#666;">(Confirmed &amp; Checked Out only)</small></h3>
+            <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Room Type</th>
+                            <th>Reservations</th>
+                            <th>Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody id="revenueBody">
+                        <tr><td colspan="3" class="text-center" style="padding:20px;color:#888;">Loading...</td></tr>
+                    </tbody>
+            </table>
+        </div>
+
+        <!-- Card 3: Guest List -->
+        <div class="card report-section">
+            <h3>Guest Activity</h3>
+            <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>Reservations</th>
+                            <th>Total Spent</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="guestListBody">
+                        <tr><td colspan="6" class="text-center" style="padding:20px;color:#888;">Loading...</td></tr>
+                    </tbody>
+            </table>
+        </div>
+
+        <p style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/reports.js"></script>
+
+</body>
+</html>
