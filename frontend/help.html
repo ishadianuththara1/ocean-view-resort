@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h2>User Guide</h2>
+        </div>
+
+
+        <div class="card">
+            <h2>How to Use the System</h2>
+
+            <hr>
+            <div>
+                <h3>1. Logging In</h3>
+                <ol>
+                    <li>Open the system by navigating to <strong>login.html</strong> in your browser.</li>
+                    <li>Enter your <strong>Username</strong> and <strong>Password</strong>.</li>
+                    <li>Click the <strong>Login</strong> button.</li>
+                    <li>On success, you will be taken to the Dashboard.</li>
+                    <li>Default credentials: <code>admin / admin123</code> or <code>staff / staff123</code>.</li>
+                </ol>
+            </div>
+
+            <hr>
+            <div>
+                <h3>2. Adding a New Reservation</h3>
+                <ol>
+                    <li>From the Dashboard, click <strong>New Reservation</strong>.</li>
+                    <li>Fill in all required fields marked with a red asterisk (*).</li>
+                    <li>Enter the guest name (letters and spaces only, minimum 2 characters).</li>
+                    <li>Enter a valid contact number (10-15 digits).</li>
+                    <li>Select the appropriate room type from the dropdown.</li>
+                    <li>Choose a check-in date (today or future) and a check-out date (after check-in).</li>
+                    <li>Click <strong>Create Reservation</strong>. A unique reservation number is automatically
+                        assigned.</li>
+                </ol>
+            </div>
+
+            <hr>
+            <div>
+                <h3>3. Viewing All Reservations</h3>
+                <ol>
+                    <li>Click <strong>All Reservations</strong> from the Dashboard.</li>
+                    <li>A table showing all reservations will be displayed.</li>
+                    <li>Use the <strong>Search</strong> box at the top to filter by guest name, reservation number, or
+                        contact number.</li>
+                    <li>Click <strong>View</strong> next to any reservation to see its full details.</li>
+                </ol>
+            </div>
+
+            <hr>
+            <div>
+                <h3>4. Editing a Reservation</h3>
+                <ol>
+                    <li>Open a reservation by clicking <strong>View</strong> on the reservations list.</li>
+                    <li>Click the <strong>Edit Reservation</strong> button.</li>
+                    <li>Update the fields you want to change.</li>
+                    <li>Click <strong>Save Changes</strong> to apply the update.</li>
+                    <li>The system will recalculate the total amount automatically if dates or room type change.</li>
+                </ol>
+            </div>
+
+            <hr>
+            <div>
+                <h3>5. Deleting a Reservation</h3>
+                <ol>
+                    <li>Open a reservation by clicking <strong>View</strong>, then click <strong>Delete
+                            Reservation</strong>.</li>
+                    <li>Alternatively, click the <strong>Delete</strong> button directly in the reservations table.</li>
+                    <li>A confirmation dialog will appear — click OK to confirm deletion.</li>
+                    <li><strong>Warning:</strong> Deletion is permanent and cannot be undone.</li>
+                </ol>
+            </div>
+
+            <hr>
+            <div>
+                <h3>6. Calculating and Printing a Bill</h3>
+                <ol>
+                    <li>Click <strong>Calculate Bill</strong> from the Dashboard.</li>
+                    <li>Select the reservation from the dropdown list.</li>
+                    <li>The bill will be displayed showing the room type, number of nights, price per night, and total
+                        amount.</li>
+                    <li>Click <strong>Print Bill</strong> to print the bill for the guest.</li>
+                </ol>
+            </div>
+
+            <hr>
+            <div>
+                <h3>7. Logging Out</h3>
+                <ol>
+                    <li>Click the <strong>Logout</strong> button in the top-right corner at any time.</li>
+                    <li>You will be redirected to the login page.</li>
+                    <li>Always log out when leaving the workstation unattended.</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <h2>Room Types &amp; Rates</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Room Type</th>
+                        <th>Price Per Night (LKR)</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Standard</td>
+                        <td>LKR 80.00</td>
+                        <td>Comfortable room with essential amenities</td>
+                    </tr>
+                    <tr>
+                        <td>Deluxe</td>
+                        <td>LKR 150.00</td>
+                        <td>Spacious room with ocean view and premium fittings</td>
+                    </tr>
+                    <tr>
+                        <td>Suite</td>
+                        <td>LKR 250.00</td>
+                        <td>Luxury suite with separate living area and full ocean view</td>
+                    </tr>
+                    <tr>
+                        <td>Family</td>
+                        <td>LKR 180.00</td>
+                        <td>Large room suitable for families with extra beds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="margin-top:10px;">
+            <a href="index.html" class="btn btn-secondary">&larr; Back to Dashboard</a>
+        </p>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        checkAuth();
+        setNavbarUser();
+    </script>
+
+</body>
+
+</html>

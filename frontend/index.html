@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ocean View Resort</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">Ocean View Resort</a>
+        <div class="nav-right">
+            <span>Welcome, <strong id="nav-username"></strong></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p style="color:#666; margin-bottom:24px;">
+                Welcome to the Ocean View Resort Reservation Management System.
+                Use the menu below to manage hotel reservations.
+            </p>
+
+            <div>
+
+                <a href="reservations.html" class="menu-card">
+                    <span class="icon">&#128203;</span>
+                    <h3>All Reservations</h3>
+                    <p>View, search, and manage all guest bookings</p>
+                </a>
+
+                <a href="add-reservation.html" class="menu-card">
+                    <span class="icon">&#43;&#9744;</span>
+                    <h3>New Reservation</h3>
+                    <p>Add a new guest reservation to the system</p>
+                </a>
+
+                <a href="bill.html" class="menu-card">
+                    <span class="icon">&#128196;</span>
+                    <h3>Calculate Bill</h3>
+                    <p>Generate and print a bill for any reservation</p>
+                </a>
+
+                <a href="guests.html" class="menu-card">
+                    <span class="icon">&#128101;</span>
+                    <h3>Guests</h3>
+                    <p>Register and manage hotel guests</p>
+                </a>
+
+                <a href="reports.html" class="menu-card">
+                    <span class="icon">&#128202;</span>
+                    <h3>Reports</h3>
+                    <p>Daily summary, revenue, and guest activity</p>
+                </a>
+
+                <a href="help.html" class="menu-card">
+                    <span class="icon">&#8505;</span>
+                    <h3>Help</h3>
+                    <p>System usage guide and instructions for staff</p>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        checkAuth();
+        setNavbarUser();
+    </script>
+
+</body>
+</html>
